@@ -1,39 +1,102 @@
-@media screen and (min-width: 980px) {.t-records {opacity: 0;}.t-records_animated {-webkit-transition: opacity ease-in-out .2s;-moz-transition: opacity ease-in-out .2s;-o-transition: opacity ease-in-out .2s;transition: opacity ease-in-out .2s;}.t-records.t-records_visible {opacity: 1;}}
+body {
+  scroll-behavior: smooth;
+}
 
-#rec1880272331 .t-menu-base__imglogo{max-width:24px;width:24px;}
+/* Hero */
 
-#rec1880272331 .t-menu-burger__text{color:#000000;}
+.hero-section {
+  background: linear-gradient(135deg, #ffa50015, #00000005);
+}
 
-.tmenu-mobile{background-color:#111;display:none;width:100%;top:0;z-index:990;}.tmenu-mobile_positionfixed{position:fixed;}.tmenu-mobile__text{color:#000;}.tmenu-mobile__container{min-height:64px;padding:20px;position:relative;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;}.tmenu-mobile__list{display:block;}.tmenu-mobile__burgerlogo{display:inline-block;font-size:24px;font-weight:400;white-space:nowrap;vertical-align:middle;}@media screen and (max-width:960px){.tmenu-mobile__menucontent_hidden{display:none;height:auto;}.tmenu-mobile{display:block;}}@media screen and (max-width:960px){#rec1880272331 .tmenu-mobile{background-color:#fffaf0;}}
+.hero-image {
+  max-height: 360px;
+  object-fit: cover;
+}
 
-#rec1880272331 .tmenu-mobile__burgerlogo a{color:#000000;}
+/* Галерея-заглушка */
 
-#rec1880272331 .tmenu-mobile__burgerlogo__title{color:#000000;}
+.gallery-card {
+  background-image: linear-gradient(135deg, #111, #444);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
 
-#rec1880272331 .t-menu-base__imglogo{max-width:24px;width:24px;}
+/* Небольшая тень у секций */
 
-#rec1880272331 .t-menu__link-item{}@supports (overflow:-webkit-marquee) and (justify-content:inherit){#rec1880272331 .t-menu__link-item,#rec1880272331 .t-menu__link-item.t-active{opacity:1 !important;}}
+section {
+  border-top: 1px solid rgba(0,0,0,0.03);
+}
 
-#rec1880272331 .t-menu-base__textlogo{color:#000000;}#rec1880272331 a.t-menu__link-item{color:#000000;}#rec1880272331 .t-menu-base__langs_flex .t-menu-base__langs-item a{text-transform:uppercase;}#rec1880272331 .t-menu-base__langs-button{text-transform:uppercase;}
+/* Ссылки в футере/тексте аккуратнее */
 
-#rec1880272331 .t-menu-base__maincontainer{}#rec1880272331 .t-menuwidgeticons__icon{background-color:;}#rec1880272331 .t-menu-base{}#rec1880272331 .t-menu-base,#rec1880272331 .t-menu-base__mobile-menu{border-bottom:1px solid rgba(0,0,0,0.20);}#rec1880272331 .t-menu-base{background-color:rgba();}#rec1880272331 .t-menusub__menu--fullscreen{background-color:rgba(255,250,240,1) !important;}@media screen and (max-width:960px){#rec1880272331 .t-menu-base{position:static;}#rec1880272331 .t-menu-base__maincontainer{background-color:#fffaf0 !important;}}
+a {
+  text-decoration: none;
+}
 
-#rec1880272341 .t-btnflex.t-btnflex_type_button {color:#ffffff;background-color:#000000;--border-width:0px;border-style:none !important;border-radius:8px;box-shadow:none !important;transition-duration:0.2s;transition-property:background-color,color,border-color,box-shadow,opacity,transform,gap;transition-timing-function:ease-in-out;}
+a:hover {
+  text-decoration: underline;
+}
 
-#rec1880272341 .t1127__title{color:#000000;}#rec1880272341 .t1127__descr{color:#000000;}
+/* Анимация для всех кнопок */
 
-#rec1880272341 .t1127__image{border-radius:32px;}
+.btn-animated {
+  transition: transform 0.18s ease, 
+              box-shadow 0.18s ease, 
+              background-color 0.18s ease,
+              color 0.18s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
 
-#rec1880272351 .t486__title{color:#000000;}#rec1880272351 .t486__descr{color:#000000;}
+.btn-animated:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
 
-#rec1880272351 .t486__blockimg{border-radius:15px;}
+.btn-animated:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
-.t-section__descr {max-width:560px;}#rec1880272441 .t-section__title {margin-bottom:40px;}#rec1880272441 .t-section__descr {margin-bottom:90px;}@media screen and (max-width:960px) {#rec1880272441 .t-section__title {margin-bottom:20px;}#rec1880272441 .t-section__descr {margin-bottom:45px;}}
+.contact-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1050; /* выше всего */
+}
 
-#rec1880272441 .t-section__title{color:#000000;}#rec1880272441 .t-section__descr{color:#000000;}
+.contact-fab__main {
+  width: 56px;
+  height: 56px;
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
-#rec1880272441 .t603__blockimg{border-radius:15px;}
+/* Меню из кнопок: по умолчанию спрятано */
+.contact-fab__menu {
+  position: absolute;
+  bottom: 70px; /* над круглой кнопкой */
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
 
-#rec1880272491 .t551__title{color:#000000;}#rec1880272491 .t551__contacts{color:#000000;}#rec1880272491 .t551__address{color:#000000;}
+/* Когда открыто */
+.contact-fab__menu--open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
 
-#rec1880272501 .t389__copyright{color:#000000;}#rec1880272501 .t389_scrolltop{color:#000000;}
+/* Сами пункт-кнопки можно сделать уже через .btn-animated, если хочешь */
+.contact-fab__item {
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
